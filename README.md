@@ -1,7 +1,7 @@
 # Domain Splitting
 
 #### Objective
-We want to split and application workflow into domains such that we minimize the risk of leaking sensitive data.
+We want to split an application workflow into domains such that we minimize the risk of leaking sensitive data.
 #### Approach
 First, we model an application as a workflow with vertices being data objects or function objects. Each object is assigned a sensitivity value from 0 - 1 with 1 being highly sensitive. 
 Function nodes have the added capability of manipulating the input data sensitivity by reducing or increasing it. This is modelled as a multiplier to the input sensitivity e.g. 0.5 will reduce sensitivity of the input data by half. These values are set **manually**.
