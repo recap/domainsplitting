@@ -37,3 +37,36 @@ Next we can calculate to cost of every graph partitioning (our 8 solutions). The
 node domainsplitting.js -a application01.json --domains A,B
 ```
 
+running the above will list the cost for all solutions: 
+
+```
+No of solutions: 8
+cost metric: 1.70
+solution: D1:A F1(D1):A F1:A 
+
+cost metric: 17.00
+solution: D1:A F1(D1):A F1:B 
+
+cost metric: 7.10
+solution: D1:A F1(D1):B F1:A 
+
+cost metric: 11.60
+solution: D1:A F1(D1):B F1:B 
+
+cost metric: 11.60
+solution: D1:B F1(D1):A F1:A 
+
+cost metric: 7.10
+solution: D1:B F1(D1):A F1:B 
+
+cost metric: 17.00
+solution: D1:B F1(D1):B F1:A 
+
+cost metric: 1.70
+solution: D1:B F1(D1):B F1:B 
+
+
+least cost: 1.70
+```
+
+A solution e.g. D1:A F1(D1):B F1:A means data D1 is mapped to domain A, function F1 mapped to A and data output F1(D1) mapped to B
