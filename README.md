@@ -32,6 +32,9 @@ Now we can factor this in our cost calculation e.g. if D1 has to move between _A
 
 Next we can calculate to cost of every graph partitioning (our 8 solutions). The cost function gives us an indication on which partitions lower the sensitivity leak (one of the risks).
 
+#### Problem size
+The problem size grows with respect to the number of domains and the number of nodes. It can be described as the n-tuples of m-sets problem which is m^n where is m is the number of domains and n is do number of nodes in the graph. So for a workflow with  9 nodes and 4 domains we get 4^9 = 262144 solutions.
+
 #### Using the code
 ``` 
 node domainsplitting.js -a application01.json --domains A,B
@@ -70,8 +73,5 @@ least cost: 1.70
 ```
 
 A solution e.g. D1:A F1(D1):B F1:A means data D1 is mapped to domain A, function F1 mapped to A and data output F1(D1) mapped to B. As can be noted the least cost splitting is 1.7 but this is not particularly interesting since it only shows everything in domain A or everything in domain B. The interesting partition is 7.10 which shows function F1 being in the same domain as data D1 i.e. moving compute to data.
-
-#### Problem size
-The problem size grows with respect to the number of domains and the number of nodes. It can be described as the n-tuples of m-sets problem which is m^n where is m is the number of domains and n is do number of nodes in the graph. So for a workflow with  9 nodes and 4 domains we get 4^9 = 262144 solutions.
 
 
